@@ -1,0 +1,19 @@
+# This is the configuration file for Ghostty.
+
+theme = GitHub Dark
+
+# theme = Everforest Light Med
+# background = F3EAD3
+
+background-opacity = 1
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = background
+
+font-family = "JetBrains Mono"
+bold-is-bright = false
+mouse-scroll-multiplier = 1
+
+shell-integration-features = ssh-terminfo,ssh-env
