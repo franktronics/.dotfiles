@@ -56,7 +56,7 @@ These keys also move through tmux panes when there is no Neovim split in that di
 
 Neo-tree is configured as a floating file explorer.
 
-The floating explorer uses a visible double border.
+The floating explorer uses a visible blue double border.
 
 | Key | Action |
 | --- | --- |
@@ -81,6 +81,20 @@ Inside Neo-tree:
 | `<leader>s.` | Recent files |
 | `<leader>/` | Search current buffer |
 | `<leader>sd` | Search diagnostics |
+
+## Completion
+
+Completion is provided by blink.cmp.
+
+| Key | Action |
+| --- | --- |
+| `Ctrl-Space` | Open completion menu or documentation |
+| `Ctrl-n` / `Ctrl-p` | Select next / previous item |
+| `Ctrl-y` | Accept selected completion |
+| `Ctrl-e` | Hide completion menu |
+| `Ctrl-k` | Toggle signature help |
+
+Completion sources include LSP, paths, snippets, and current buffer words.
 
 ## Floating Terminal
 

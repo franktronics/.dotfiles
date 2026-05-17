@@ -11,6 +11,19 @@ return {
       { '<leader>e', '<cmd>Neotree toggle reveal<cr>', desc = 'Toggle file explorer' },
       { '\\', '<cmd>Neotree toggle reveal<cr>', desc = 'Toggle file explorer' },
     },
+    init = function()
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = function()
+          vim.api.nvim_set_hl(0, 'NeoTreeFloatBorder', { fg = '#ffffff', bold = true })
+          vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle', { fg = '#ffffff', bold = true })
+        end,
+      })
+    end,
+    config = function(_, opts)
+      require('neo-tree').setup(opts)
+      vim.api.nvim_set_hl(0, 'NeoTreeFloatBorder', { fg = '#ffffff', bold = true })
+      vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle', { fg = '#ffffff', bold = true })
+    end,
     opts = {
       close_if_last_window = true,
       enable_git_status = true,

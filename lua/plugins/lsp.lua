@@ -4,6 +4,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
+      'saghen/blink.cmp',
       'mason-org/mason.nvim',
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -43,6 +44,14 @@ return {
       })
 
       local servers = {
+        bashls = {},
+        clangd = {},
+        cssls = {},
+        dockerls = {},
+        docker_compose_language_service = {},
+        eslint = {},
+        html = {},
+        jsonls = {},
         lua_ls = {
           on_init = function(client)
             client.server_capabilities.documentFormattingProvider = false
@@ -62,12 +71,21 @@ return {
           end,
           settings = { Lua = { format = { enable = false } } },
         },
+        marksman = {},
+        pyright = {},
+        tailwindcss = {},
+        terraformls = {},
+        ts_ls = {},
+        yamlls = {},
       }
 
       require('mason').setup {}
       require('mason-tool-installer').setup { ensure_installed = { 'lua_ls', 'stylua' } }
 
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+
       for name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
         vim.lsp.config(name, server)
         vim.lsp.enable(name)
       end
