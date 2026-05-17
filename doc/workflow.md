@@ -44,6 +44,9 @@ tmux attach -t project-name
 | Next buffer | `Tab` |
 | Previous buffer | `Shift-Tab` |
 | Floating shell | `<leader>tt` |
+| Git UI | `<leader>gg` |
+| Git blame line | `<leader>gb` |
+| Preview Git hunk | `<leader>gp` |
 | Save | `Ctrl-s` |
 
 ## Clean Up

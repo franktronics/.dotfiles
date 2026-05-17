@@ -56,6 +56,8 @@ These keys also move through tmux panes when there is no Neovim split in that di
 
 Neo-tree is configured as a floating file explorer.
 
+The floating explorer uses a visible double border.
+
 | Key | Action |
 | --- | --- |
 | `<leader>e` | Toggle file explorer |
@@ -88,6 +90,24 @@ Inside Neo-tree:
 | `Esc Esc` | Leave terminal mode |
 
 The floating terminal uses a smart size: 80% of the window on small screens, capped on large screens.
+
+## Git
+
+| Key or command | Action |
+| --- | --- |
+| `<leader>gg` | Open LazyGit in a floating terminal |
+| `:LazyGit` | Open LazyGit in a floating terminal |
+| `<leader>gb` | Show a large Git blame window with commit details and diff |
+| `<leader>gB` | Toggle inline Git blame for the current line |
+| `<leader>gp` | Preview current Git hunk |
+| `<leader>gs` | Stage current Git hunk or visual selection |
+| `<leader>gr` | Reset current Git hunk or visual selection |
+| `<leader>gu` | Undo staged Git hunk |
+| `<leader>gd` | Diff current file against the index |
+| `]h` | Next Git hunk |
+| `[h` | Previous Git hunk |
+
+LazyGit must be installed on the system for these commands to work.
 
 ## Save
 

@@ -11,6 +11,26 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      on_attach = function(bufnr)
+        local gitsigns = require 'gitsigns'
+        local git_blame = require 'utils.git_blame'
+
+        local function map(mode, lhs, rhs, desc)
+          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+        end
+
+        map('n', ']h', gitsigns.next_hunk, 'Next Git hunk')
+        map('n', '[h', gitsigns.prev_hunk, 'Previous Git hunk')
+        map('n', '<leader>gb', git_blame.open, 'Git blame line')
+        map('n', '<leader>gB', gitsigns.toggle_current_line_blame, 'Toggle Git blame')
+        map('n', '<leader>gp', gitsigns.preview_hunk, 'Preview Git hunk')
+        map('n', '<leader>gs', gitsigns.stage_hunk, 'Stage Git hunk')
+        map('v', '<leader>gs', function() gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, 'Stage Git hunk')
+        map('n', '<leader>gr', gitsigns.reset_hunk, 'Reset Git hunk')
+        map('v', '<leader>gr', function() gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, 'Reset Git hunk')
+        map('n', '<leader>gu', gitsigns.undo_stage_hunk, 'Undo stage Git hunk')
+        map('n', '<leader>gd', gitsigns.diffthis, 'Git diff file')
+      end,
     },
   },
 
@@ -23,6 +43,7 @@ return {
       spec = {
         { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
         { '<leader>b', group = '[B]uffer' },
+        { '<leader>g', group = '[G]it' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>w', group = '[W]indow' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
