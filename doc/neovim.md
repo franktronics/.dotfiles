@@ -129,6 +129,17 @@ LazyGit must be installed on the system for these commands to work.
 | --- | --- |
 | `Ctrl-s` | Save file |
 
+Supported buffers are formatted automatically on save.
+
+| Filetypes | Formatter |
+| --- | --- |
+| Lua | stylua |
+| JavaScript, TypeScript, JSON, HTML, CSS, Markdown, YAML | prettier |
+| Shell | shfmt |
+| C, C++ | clang-format |
+
+Use `<leader>f` to format the current buffer manually.
+
 ## Copilot
 
 Copilot suggestions appear inline, not inside the completion menu.
