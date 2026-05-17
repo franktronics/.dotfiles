@@ -5,7 +5,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      'nvim-tree/nvim-web-devicons',
     },
     keys = {
       { '<leader>e', '<cmd>Neotree toggle reveal<cr>', desc = 'Toggle file explorer' },
@@ -30,7 +30,13 @@ return {
         },
       },
       window = {
-        width = 32,
+        position = 'float',
+        popup = {
+          size = {
+            height = '80%',
+            width = '45%',
+          },
+        },
       },
     },
   },

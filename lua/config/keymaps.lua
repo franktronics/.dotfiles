@@ -1,9 +1,25 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })
+vim.keymap.set({ 'n', 'i', 'x' }, '<C-s>', '<cmd>write<CR><Esc>', { desc = 'Save file' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
+vim.keymap.set('n', '<leader>bo', '<cmd>%bdelete|edit#|bdelete#<CR>', { desc = '[B]uffer delete [O]thers' })
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = '[W]indow split [V]ertical' })
+vim.keymap.set('n', '<leader>wh', '<C-w>s', { desc = '[W]indow split [H]orizontal' })
+vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = '[W]indow [Q]uit' })
+vim.keymap.set('n', '<leader>wo', '<C-w>o', { desc = '[W]indow [O]nly' })
+vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = '[W]indow equalize' })
+
+vim.keymap.set('n', '<leader>wH', '<cmd>vertical resize -5<CR>', { desc = '[W]indow resize left' })
+vim.keymap.set('n', '<leader>wL', '<cmd>vertical resize +5<CR>', { desc = '[W]indow resize right' })
+vim.keymap.set('n', '<leader>wJ', '<cmd>resize +3<CR>', { desc = '[W]indow resize down' })
+vim.keymap.set('n', '<leader>wK', '<cmd>resize -3<CR>', { desc = '[W]indow resize up' })

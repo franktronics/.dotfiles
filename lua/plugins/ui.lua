@@ -21,7 +21,9 @@ return {
       icons = { mappings = vim.g.have_nerd_font },
       spec = {
         { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
+        { '<leader>b', group = '[B]uffer' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>w', group = '[W]indow' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { 'gr', group = 'LSP Actions', mode = { 'n' } },
       },
