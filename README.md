@@ -2,6 +2,8 @@
 
 This repository contains a macOS terminal development setup built around Neovim, tmux, Ghostty, and AeroSpace.
 
+![Development environment screenshot](assets/Screenshot-config.png)
+
 | Layer | Responsibility | Main keys |
 | --- | --- | --- |
 | AeroSpace | macOS windows and workspaces | `cmd-*` |
