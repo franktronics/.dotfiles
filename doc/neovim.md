@@ -82,6 +82,18 @@ Inside Neo-tree:
 | `<leader>/` | Search current buffer |
 | `<leader>sd` | Search diagnostics |
 
+## LSP Navigation
+
+| Key | Action |
+| --- | --- |
+| `gd` | Go to definition |
+| `gr` | Show references |
+| `gI` | Go to implementation |
+| `gy` | Go to type definition |
+| `gD` | Go to TypeScript source definition when vtsls is attached |
+| `gO` | Show document symbols |
+| `gW` | Show workspace symbols |
+
 ## Completion
 
 Completion is provided by blink.cmp.
@@ -90,7 +102,7 @@ Completion is provided by blink.cmp.
 | --- | --- |
 | `Ctrl-Space` | Open completion menu or documentation |
 | `Ctrl-n` / `Ctrl-p` | Select next / previous item |
-| `Ctrl-y` | Accept selected completion |
+| `Enter` | Accept selected completion |
 | `Ctrl-e` | Hide completion menu |
 | `Ctrl-k` | Toggle signature help |
 
@@ -143,6 +155,12 @@ Use `<leader>f` to format the current buffer manually.
 ## Copilot
 
 Copilot suggestions appear inline, not inside the completion menu.
+
+| Key | Action |
+| --- | --- |
+| `Tab` | Accept inline suggestion in insert mode |
+| `Alt-]` / `Alt-[` | Next / previous inline suggestion |
+| `Ctrl-]` | Dismiss inline suggestion |
 
 Authenticate once with:
 

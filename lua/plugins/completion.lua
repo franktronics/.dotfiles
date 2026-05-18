@@ -13,7 +13,7 @@ return {
       'L3MON4D3/LuaSnip',
     },
     opts = {
-      keymap = { preset = 'default' },
+      keymap = { preset = 'enter' },
       appearance = { nerd_font_variant = 'mono' },
       completion = { documentation = { auto_show = false, auto_show_delay_ms = 500 } },
       sources = {
@@ -30,7 +30,18 @@ return {
     cmd = 'Copilot',
     event = 'InsertEnter',
     opts = {
-      suggestion = { enabled = true, auto_trigger = true },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = '<Tab>',
+          accept_word = false,
+          accept_line = false,
+          next = '<M-]>',
+          prev = '<M-[>',
+          dismiss = '<C-]>',
+        },
+      },
       panel = { enabled = false },
     },
   },

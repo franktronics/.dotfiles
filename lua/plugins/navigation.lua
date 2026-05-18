@@ -43,12 +43,46 @@ return {
         group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
         callback = function(event)
           local buf = event.buf
+          vim.keymap.set('n', 'gd', function()
+            builtin.lsp_definitions { reuse_win = true }
+          end, { buffer = buf, desc = '[G]oto [D]efinition' })
+          vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = buf, desc = '[G]oto [R]eferences', nowait = true })
+          vim.keymap.set('n', 'gI', function()
+            builtin.lsp_implementations { reuse_win = true }
+          end, { buffer = buf, desc = '[G]oto [I]mplementation' })
+          vim.keymap.set('n', 'gy', function()
+            builtin.lsp_type_definitions { reuse_win = true }
+          end, { buffer = buf, desc = '[G]oto T[y]pe Definition' })
           vim.keymap.set('n', 'grr', builtin.lsp_references, { buffer = buf, desc = '[G]oto [R]eferences' })
           vim.keymap.set('n', 'gri', builtin.lsp_implementations, { buffer = buf, desc = '[G]oto [I]mplementation' })
           vim.keymap.set('n', 'grd', builtin.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition' })
           vim.keymap.set('n', 'gO', builtin.lsp_document_symbols, { buffer = buf, desc = 'Open document symbols' })
           vim.keymap.set('n', 'gW', builtin.lsp_dynamic_workspace_symbols, { buffer = buf, desc = 'Open workspace symbols' })
           vim.keymap.set('n', 'grt', builtin.lsp_type_definitions, { buffer = buf, desc = '[G]oto [T]ype Definition' })
+
+          for _, client in ipairs(vim.lsp.get_clients { bufnr = buf }) do
+            if client.name == 'vtsls' then
+              vim.keymap.set('n', 'gD', function()
+                local win = vim.api.nvim_get_current_win()
+                local params = vim.lsp.util.make_position_params(win, client.offset_encoding)
+                client:exec_cmd({
+                  command = 'typescript.goToSourceDefinition',
+                  arguments = { params.textDocument.uri, params.position },
+                }, { bufnr = buf }, function(err, result)
+                  if err then
+                    vim.notify('Go to source definition failed: ' .. err.message, vim.log.levels.ERROR)
+                    return
+                  end
+                  if not result or vim.tbl_isempty(result) then
+                    vim.notify('No source definition found', vim.log.levels.INFO)
+                    return
+                  end
+                  vim.lsp.util.show_document(result[1], client.offset_encoding, { focus = true })
+                end)
+              end, { buffer = buf, desc = '[G]oto Source [D]efinition' })
+              break
+            end
+          end
         end,
       })
     end,

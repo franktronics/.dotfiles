@@ -45,9 +45,21 @@ A tmux window is like a tab inside a session.
 | `C-a ,` | Rename current window |
 | `C-a &` | Kill current window |
 
+## Status Bar
+
+The status bar is shown at the bottom and uses a GitHub Dark color palette to match Neovim.
+
+| Area | Shows |
+| --- | --- |
+| Left | Current session name |
+| Middle | tmux windows, with the active window highlighted |
+| Right | `PREFIX` when `C-a` is active, current time, and host name |
+
 ## Panes
 
 A pane is a split inside a tmux window.
+
+tmux enables extended keys for Ghostty, so modified keys like `Ctrl+Enter` are passed through to terminal applications. This keeps `Ctrl+Enter` available for multiline prompts in tools such as opencode.
 
 | Key | Action |
 | --- | --- |

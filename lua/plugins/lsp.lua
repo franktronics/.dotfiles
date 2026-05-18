@@ -75,7 +75,7 @@ return {
         pyright = {},
         tailwindcss = {},
         terraformls = {},
-        ts_ls = {},
+        vtsls = {},
         yamlls = {},
       }
 
