@@ -93,6 +93,9 @@ Inside Neo-tree:
 | `gD` | Go to TypeScript source definition when vtsls is attached |
 | `gO` | Show document symbols |
 | `gW` | Show workspace symbols |
+| `K` | Show LSP hover documentation |
+
+LSP hover, signature help, command messages, and long messages are displayed through noice.nvim popups.
 
 ## Completion
 
