@@ -8,6 +8,20 @@ Leader key:
 Space
 ```
 
+## Editing
+
+Pairs are inserted automatically in insert mode.
+
+| Typed | Inserted |
+| --- | --- |
+| `(` | `()` |
+| `[` | `[]` |
+| `{` | `{}` |
+| `'` | `''` |
+| `"` | `""` |
+
+HTML, JSX, and TSX tags are also closed automatically when Tree-sitter can identify the syntax.
+
 ## Buffers
 
 A buffer is an open file.
