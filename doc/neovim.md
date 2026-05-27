@@ -31,12 +31,14 @@ A buffer is an open file.
 | `Tab` | Next buffer |
 | `Shift-Tab` | Previous buffer |
 | `<leader><leader>` | Search open buffers |
-| `<leader>bd` | Delete current buffer |
+| `<leader>bd` | Delete current buffer (preserves split layout) |
 | `<leader>bo` | Delete other buffers |
 
 ## Splits
 
 A split is a visible editor window.
+
+When creating a split, the current buffer moves to the new pane (which receives focus) and the previously active buffer appears in the original pane.
 
 | Key | Action |
 | --- | --- |
