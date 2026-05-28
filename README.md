@@ -1,15 +1,18 @@
 # Development Environment
 
-This repository contains a macOS terminal development setup built around Neovim, tmux, Ghostty, and AeroSpace.
+This repository contains a macOS terminal development setup built around Neovim, tmux, Ghostty, AeroSpace and the config for my split-keyboard Dygma Defy.
 
 ![Development environment screenshot](assets/Screenshot-config.png)
 
-| Layer | Responsibility | Main keys |
-| --- | --- | --- |
-| AeroSpace | macOS windows and workspaces | `cmd-*` |
-| Ghostty | Terminal rendering | no custom navigation keys |
-| tmux | Terminal sessions, windows, and panes | `C-a`, `C-h/j/k/l` |
-| Neovim | Editing, buffers, splits, LSP | `<leader>`, `C-h/j/k/l` |
+![Dygma Defy config Layer 1](split_kb/layer_1.png)
+
+| Layer     | Responsibility                        | Main keys                 |
+| --------- | ------------------------------------- | ------------------------- |
+| AeroSpace | macOS windows and workspaces          | `cmd-*`                   |
+| Ghostty   | Terminal rendering                    | no custom navigation keys |
+| tmux      | Terminal sessions, windows, and panes | `C-a`, `C-h/j/k/l`        |
+| Neovim    | Editing, buffers, splits, LSP         | `<leader>`, `C-h/j/k/l`   |
+| Split Kb  | Backup for the Kb Config              |                           |
 
 ## Requirements
 
@@ -60,11 +63,11 @@ If you edit runtime files directly and want to bring them back into the reposito
 ~/.config/nvim/scripts/setup.sh --sync-from-system
 ```
 
-| Runtime source | Repository destination |
-| --- | --- |
-| `~/.tmux.conf` | `tmux/tmux.conf` |
-| `~/.aerospace.toml` | `aerospace/aerospace.toml` |
-| Ghostty runtime config | `ghostty/config` |
+| Runtime source         | Repository destination     |
+| ---------------------- | -------------------------- |
+| `~/.tmux.conf`         | `tmux/tmux.conf`           |
+| `~/.aerospace.toml`    | `aerospace/aerospace.toml` |
+| Ghostty runtime config | `ghostty/config`           |
 
 ## Checking The Setup
 
@@ -93,11 +96,11 @@ Plugin specs live in `lua/plugins/*.lua` and are loaded by `lazy.nvim`.
 
 Useful commands:
 
-| Command | Description |
-| --- | --- |
-| `:Lazy` | Manage plugins |
-| `:Mason` | Manage LSP servers and tools |
-| `:checkhealth` | Diagnose Neovim setup |
+| Command        | Description                  |
+| -------------- | ---------------------------- |
+| `:Lazy`        | Manage plugins               |
+| `:Mason`       | Manage LSP servers and tools |
+| `:checkhealth` | Diagnose Neovim setup        |
 
 ## Navigation Model
 
@@ -107,22 +110,22 @@ This keeps AeroSpace, tmux, and Neovim from fighting over the same shortcuts.
 
 ## AeroSpace
 
-| Key | Action |
-| --- | --- |
-| `cmd-h` | Focus window left |
-| `cmd-j` | Focus window down |
-| `cmd-k` | Focus window up |
-| `cmd-l` | Focus window right |
-| `cmd-shift-h` | Move window left |
-| `cmd-shift-j` | Move window down |
-| `cmd-shift-k` | Move window up |
-| `cmd-shift-l` | Move window right |
-| `cmd-1..8` | Switch workspace |
+| Key              | Action                   |
+| ---------------- | ------------------------ |
+| `cmd-h`          | Focus window left        |
+| `cmd-j`          | Focus window down        |
+| `cmd-k`          | Focus window up          |
+| `cmd-l`          | Focus window right       |
+| `cmd-shift-h`    | Move window left         |
+| `cmd-shift-j`    | Move window down         |
+| `cmd-shift-k`    | Move window up           |
+| `cmd-shift-l`    | Move window right        |
+| `cmd-1..8`       | Switch workspace         |
 | `cmd-shift-1..8` | Move window to workspace |
-| `cmd-/` | Toggle tiles layout |
-| `cmd-,` | Toggle accordion layout |
-| `cmd-tab` | Previous workspace |
-| `cmd-shift-;` | Service mode |
+| `cmd-/`          | Toggle tiles layout      |
+| `cmd-,`          | Toggle accordion layout  |
+| `cmd-tab`        | Previous workspace       |
+| `cmd-shift-;`    | Service mode             |
 
 Ghostty is intentionally not forced to floating mode. It is managed as a tiled AeroSpace window.
 
@@ -134,53 +137,53 @@ Prefix key:
 C-a
 ```
 
-| Key | Action |
-| --- | --- |
-| `C-a |` | Split pane horizontally |
-| `C-a -` | Split pane vertically |
-| `C-a c` | New window in current path |
-| `C-a z` | Zoom current pane |
-| `C-a r` | Reload tmux config |
-| `C-a [` | Enter copy mode |
-| `C-a ]` | Paste tmux buffer |
-| `C-a H/J/K/L` | Resize pane |
+| Key           | Action                     |
+| ------------- | -------------------------- | ----------------------- |
+| `C-a          | `                          | Split pane horizontally |
+| `C-a -`       | Split pane vertically      |
+| `C-a c`       | New window in current path |
+| `C-a z`       | Zoom current pane          |
+| `C-a r`       | Reload tmux config         |
+| `C-a [`       | Enter copy mode            |
+| `C-a ]`       | Paste tmux buffer          |
+| `C-a H/J/K/L` | Resize pane                |
 
 Pane navigation:
 
-| Key | Action |
-| --- | --- |
-| `C-h` | Move left |
-| `C-j` | Move down |
-| `C-k` | Move up |
+| Key   | Action     |
+| ----- | ---------- |
+| `C-h` | Move left  |
+| `C-j` | Move down  |
+| `C-k` | Move up    |
 | `C-l` | Move right |
 
 The same `C-h/j/k/l` keys move between tmux panes and Neovim splits through `vim-tmux-navigator`.
 
 Copy mode uses vi keys:
 
-| Key | Action |
-| --- | --- |
-| `C-a [` | Enter copy mode |
-| `h/j/k/l` | Move cursor |
-| `/` | Search forward |
-| `?` | Search backward |
-| `v` | Start selection |
-| `y` | Copy selection |
+| Key       | Action          |
+| --------- | --------------- |
+| `C-a [`   | Enter copy mode |
+| `h/j/k/l` | Move cursor     |
+| `/`       | Search forward  |
+| `?`       | Search backward |
+| `v`       | Start selection |
+| `y`       | Copy selection  |
 
 ## Neovim
 
-| Key | Action |
-| --- | --- |
-| `<leader>` | Space |
-| `C-h/j/k/l` | Move between splits or tmux panes |
-| `<leader><leader>` | Find open buffers |
-| `<leader>sf` | Find files |
-| `<leader>sg` | Live grep |
-| `<leader>/` | Search in current buffer |
-| `<leader>sd` | Search diagnostics |
-| `<leader>f` | Format buffer |
-| `<leader>tt` | Toggle floating terminal |
-| `<Esc><Esc>` | Exit terminal mode |
+| Key                | Action                            |
+| ------------------ | --------------------------------- |
+| `<leader>`         | Space                             |
+| `C-h/j/k/l`        | Move between splits or tmux panes |
+| `<leader><leader>` | Find open buffers                 |
+| `<leader>sf`       | Find files                        |
+| `<leader>sg`       | Live grep                         |
+| `<leader>/`        | Search in current buffer          |
+| `<leader>sd`       | Search diagnostics                |
+| `<leader>f`        | Format buffer                     |
+| `<leader>tt`       | Toggle floating terminal          |
+| `<Esc><Esc>`       | Exit terminal mode                |
 
 Line numbers are absolute and relative by default.
 
