@@ -1,10 +1,6 @@
-local function terminal_width()
-  return math.min(math.floor(vim.o.columns * 0.8), 150)
-end
+local function terminal_width() return math.min(math.floor(vim.o.columns * 0.8), 180) end
 
-local function terminal_height()
-  return math.min(math.floor(vim.o.lines * 0.8), 62)
-end
+local function terminal_height() return math.min(math.floor(vim.o.lines * 0.8), 80) end
 
 local lazygit_terminal
 
@@ -16,6 +12,7 @@ local function toggle_lazygit()
       cmd = 'lazygit',
       direction = 'float',
       hidden = true,
+      env = { TERM = 'xterm-256color' },
       float_opts = {
         border = 'double',
         width = terminal_width,
