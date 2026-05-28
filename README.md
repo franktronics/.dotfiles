@@ -137,16 +137,16 @@ Prefix key:
 C-a
 ```
 
-| Key           | Action                     |
+| Key           | Action                     |                         |
 | ------------- | -------------------------- | ----------------------- |
 | `C-a          | `                          | Split pane horizontally |
-| `C-a -`       | Split pane vertically      |
-| `C-a c`       | New window in current path |
-| `C-a z`       | Zoom current pane          |
-| `C-a r`       | Reload tmux config         |
-| `C-a [`       | Enter copy mode            |
-| `C-a ]`       | Paste tmux buffer          |
-| `C-a H/J/K/L` | Resize pane                |
+| `C-a -`       | Split pane vertically      |                         |
+| `C-a c`       | New window in current path |                         |
+| `C-a z`       | Zoom current pane          |                         |
+| `C-a r`       | Reload tmux config         |                         |
+| `C-a [`       | Enter copy mode            |                         |
+| `C-a ]`       | Paste tmux buffer          |                         |
+| `C-a H/J/K/L` | Resize pane                |                         |
 
 Pane navigation:
 
