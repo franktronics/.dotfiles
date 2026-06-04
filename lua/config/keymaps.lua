@@ -44,8 +44,8 @@ local function split_with_alt(split_cmd)
   vim.api.nvim_set_current_win(new_win)
 end
 
-vim.keymap.set('n', '<leader>wv', function() split_with_alt 'vsplit' end, { desc = '[W]indow split [V]ertical' })
-vim.keymap.set('n', '<leader>wh', function() split_with_alt 'split' end, { desc = '[W]indow split [H]orizontal' })
+vim.keymap.set('n', 'sv', function() split_with_alt 'vsplit' end, { desc = '[S]plit [V]ertical' })
+vim.keymap.set('n', 'ss', function() split_with_alt 'split' end, { desc = '[S]plit horizontal' })
 vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = '[W]indow [Q]uit' })
 vim.keymap.set('n', '<leader>wo', '<C-w>o', { desc = '[W]indow [O]nly' })
 vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = '[W]indow equalize' })

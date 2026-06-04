@@ -40,10 +40,12 @@ A split is a visible editor window.
 
 When creating a split, the current buffer moves to the new pane (which receives focus) and the previously active buffer appears in the original pane.
 
+Press `s` to start a split command.
+
 | Key | Action |
 | --- | --- |
-| `<leader>wv` | Create vertical split |
-| `<leader>wh` | Create horizontal split |
+| `sv` | Create vertical split |
+| `ss` | Create horizontal split |
 | `<leader>wq` | Close current split |
 | `<leader>wo` | Keep only current split |
 | `<leader>w=` | Equalize split sizes |
