@@ -94,11 +94,14 @@ Inside Neo-tree:
 
 | Key | Action |
 | --- | --- |
+| `f` | Jump to a visible character with Flash labels |
 | `<leader>sf` | Find files |
 | `<leader>sg` | Live grep project |
 | `<leader>s.` | Recent files |
 | `<leader>/` | Search current buffer |
 | `<leader>sd` | Search diagnostics |
+
+Press `f`, type the target character, then press the displayed label to jump directly to that location.
 
 ## LSP Navigation
 

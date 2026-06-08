@@ -1,5 +1,18 @@
 return {
   {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    opts = {
+      modes = {
+        char = {
+          keys = { 'f' },
+          jump_labels = true,
+        },
+      },
+    },
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
