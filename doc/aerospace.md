@@ -21,6 +21,7 @@ Ghostty is not floating by default. It is managed as a normal tiled window.
 | `cmd-shift-j` | Move window down |
 | `cmd-shift-k` | Move window up |
 | `cmd-shift-l` | Move window right |
+| `cmd-shift-f` | Toggle floating/tiling |
 
 ## Workspaces
 

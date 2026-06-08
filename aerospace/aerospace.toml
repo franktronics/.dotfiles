@@ -35,6 +35,7 @@ automatically-unhide-macos-hidden-apps = false
     cmd-shift-j = 'move down'
     cmd-shift-k = 'move up'
     cmd-shift-l = 'move right'
+    cmd-shift-f = 'layout floating tiling'
 
     cmd-u = 'resize smart -50'
     cmd-i = 'resize smart +50'
