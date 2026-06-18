@@ -170,7 +170,7 @@ Supported buffers are formatted automatically on save.
 | Filetypes | Formatter |
 | --- | --- |
 | Lua | stylua |
-| JavaScript, TypeScript, JSON, HTML, CSS, Markdown, YAML | prettier |
+| JavaScript, TypeScript, JSON, HTML, CSS, YAML | prettier |
 | Shell | shfmt |
 | C, C++ | clang-format |
 
