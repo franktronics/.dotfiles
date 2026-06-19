@@ -88,7 +88,14 @@ Inside Neo-tree:
 | `Enter` | Open file |
 | `s` | Open in horizontal split |
 | `S` | Open in vertical split |
+| `y` | Copy (yank) file or directory to clipboard |
+| `x` | Cut file or directory to clipboard |
+| `p` | Paste from clipboard |
+| `<C-r>` | Clear clipboard |
 | `q` | Close explorer |
+
+The clipboard is shared across all Neovim instances via a state file, so a
+file or directory yanked in one project can be pasted into another project.
 
 ## Search
 

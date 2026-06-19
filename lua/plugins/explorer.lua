@@ -25,6 +25,9 @@ return {
       vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle', { fg = '#ffffff', bold = true })
     end,
     opts = {
+      clipboard = {
+        sync = 'universal',
+      },
       close_if_last_window = true,
       enable_git_status = true,
       enable_diagnostics = true,
