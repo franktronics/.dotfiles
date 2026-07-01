@@ -80,7 +80,7 @@ return {
       }
 
       require('mason').setup {}
-      require('mason-tool-installer').setup { ensure_installed = { 'lua_ls', 'stylua' } }
+      require('mason-tool-installer').setup { ensure_installed = { 'lua_ls', 'stylua', 'clangd', 'clang-format' } }
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 

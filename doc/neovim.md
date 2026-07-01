@@ -112,6 +112,9 @@ Press `f`, type the target character, then press the displayed label to jump dir
 
 ## LSP Navigation
 
+C and C++ use clangd for language server features. Project-aware diagnostics and
+navigation work best when the project provides a `compile_commands.json` file.
+
 | Key | Action |
 | --- | --- |
 | `gd` | Go to definition |
@@ -173,6 +176,8 @@ LazyGit must be installed on the system for these commands to work.
 | `Ctrl-s` | Save file |
 
 Supported buffers are formatted automatically on save.
+
+C and C++ formatting uses clang-format.
 
 | Filetypes | Formatter |
 | --- | --- |
