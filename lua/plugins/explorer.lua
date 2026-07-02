@@ -42,6 +42,29 @@ return {
         window = {
           mappings = {
             ['\\'] = 'close_window',
+            ['Y'] = function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+              local cwd = vim.fn.getcwd()
+
+              vim.ui.select({
+                { label = 'Name', value = vim.fn.fnamemodify(path, ':t') },
+                { label = 'Relative path', value = vim.fn.fnamemodify(path, ':~:.') },
+                { label = 'Absolute path', value = path },
+              }, {
+                prompt = 'Copy to clipboard',
+                format_item = function(item) return item.label end,
+              }, function(choice)
+                if not choice then return end
+
+                local value = choice.value
+                if choice.label == 'Relative path' and vim.startswith(path, cwd .. '/') then
+                  value = path:sub(#cwd + 2)
+                end
+                vim.fn.setreg('+', value)
+                vim.notify('Copied: ' .. value)
+              end)
+            end,
           },
         },
       },

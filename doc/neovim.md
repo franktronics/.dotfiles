@@ -89,6 +89,7 @@ Inside Neo-tree:
 | `s` | Open in horizontal split |
 | `S` | Open in vertical split |
 | `y` | Copy (yank) file or directory to clipboard |
+| `Y` | Copy file name, relative path, or absolute path to system clipboard |
 | `x` | Cut file or directory to clipboard |
 | `p` | Paste from clipboard |
 | `<C-r>` | Clear clipboard |
