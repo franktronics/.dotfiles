@@ -111,6 +111,15 @@ file or directory yanked in one project can be pasted into another project.
 
 Press `f`, type the target character, then press the displayed label to jump directly to that location.
 
+## Folds
+
+Code folds are detected from Tree-sitter syntax. Files open with folds expanded by default.
+
+| Key | Action |
+| --- | --- |
+| `za` | Toggle fold under cursor |
+| `zA` | Toggle fold under cursor recursively |
+
 ## LSP Navigation
 
 C and C++ use clangd for language server features. Project-aware diagnostics and
