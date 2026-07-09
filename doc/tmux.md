@@ -14,6 +14,10 @@ Press `C-a`, release, then press the next key.
 
 A session is a persistent terminal workspace.
 
+Do not run `tmux` or `tmux attach` from inside an attached tmux session. tmux
+prints `sessions should be nested with care` in that situation. Use `C-a d` to
+detach first, then run tmux from the parent shell.
+
 | Command | Action |
 | --- | --- |
 | `tmux` | Start a new unnamed session |
@@ -23,6 +27,17 @@ A session is a persistent terminal workspace.
 | `tmux ls` | List sessions |
 | `tmux kill-session -t work` | Delete session `work` |
 | `tmux kill-server` | Delete all sessions |
+
+## macOS File Access
+
+macOS protects directories such as `~/Documents`, `~/Desktop`, and
+`~/Downloads` with TCC privacy controls. tmux runs a long-lived server process,
+so it needs its own permission even when Ghostty or Terminal already has access.
+
+If tmux reports `Operation not permitted` in one of those directories, add
+`/opt/homebrew/bin/tmux` in **System Settings > Privacy & Security > Full Disk
+Access**, then stop existing tmux servers and start a new session. Recheck this
+permission after a Homebrew tmux upgrade.
 
 Inside tmux:
 
