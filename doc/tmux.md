@@ -28,6 +28,30 @@ detach first, then run tmux from the parent shell.
 | `tmux kill-session -t work` | Delete session `work` |
 | `tmux kill-server` | Delete all sessions |
 
+## Session Recovery
+
+tmux-resurrect saves the session structure, windows, panes, layouts, working
+directories, and supported running programs. tmux-continuum saves this state
+automatically every 15 minutes and restores the latest snapshot when a new tmux
+server starts.
+
+Recovery is automatic after starting tmux following a reboot or crash:
+
+```sh
+tmux
+```
+
+Manual controls are available when needed:
+
+| Key | Action |
+| --- | --- |
+| `C-a Ctrl-s` | Save a snapshot now |
+| `C-a Ctrl-r` | Restore the latest snapshot |
+
+The plugins reconstruct the workspace but cannot resume process memory, SSH
+connections, or unsaved application state. A crash can lose changes made since
+the latest snapshot.
+
 ## macOS File Access
 
 macOS protects directories such as `~/Documents`, `~/Desktop`, and

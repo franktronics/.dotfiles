@@ -29,6 +29,9 @@ brew install make gcc tree-sitter stylua
 
 This setup is tested with Neovim `0.12.2`.
 
+tmux sessions are backed up every 15 minutes with tmux-resurrect and
+tmux-continuum, then restored automatically after the tmux server starts.
+
 ## Installation
 
 Clone this repository to the Neovim config directory:
@@ -144,6 +147,8 @@ C-a
 | `C-a c`       | New window in current path |                         |
 | `C-a z`       | Zoom current pane          |                         |
 | `C-a r`       | Reload tmux config         |                         |
+| `C-a Ctrl-s`  | Save tmux workspace        |                         |
+| `C-a Ctrl-r`  | Restore tmux workspace     |                         |
 | `C-a [`       | Enter copy mode            |                         |
 | `C-a ]`       | Paste tmux buffer          |                         |
 | `C-a H/J/K/L` | Resize pane                |                         |
@@ -232,10 +237,12 @@ If Neovim fails to start:
 nvim --headless '+checkhealth' '+qa'
 ```
 
-If tmux navigation does not work:
+If tmux navigation or session recovery does not work:
 
 ```sh
 ls ~/.tmux/plugins/vim-tmux-navigator
+ls ~/.tmux/plugins/tmux-resurrect
+ls ~/.tmux/plugins/tmux-continuum
 tmux source-file ~/.tmux.conf
 ```
 

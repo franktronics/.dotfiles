@@ -37,15 +37,24 @@ copy_file() {
   log "Copied: $source -> $target"
 }
 
-install_tmux_navigator() {
-  local plugin_dir="$HOME/.tmux/plugins/vim-tmux-navigator"
+install_tmux_plugin() {
+  local name="$1"
+  local repository="$2"
+  local plugin_dir="$HOME/.tmux/plugins/$name"
+
   if [[ ! -d "$plugin_dir" ]]; then
     mkdir -p "$(dirname "$plugin_dir")"
-    git clone https://github.com/christoomey/vim-tmux-navigator "$plugin_dir"
-    log "Installed tmux plugin: vim-tmux-navigator"
+    git clone "$repository" "$plugin_dir"
+    log "Installed tmux plugin: $name"
   else
-    log "Tmux plugin already installed: vim-tmux-navigator"
+    log "Tmux plugin already installed: $name"
   fi
+}
+
+install_tmux_plugins() {
+  install_tmux_plugin "vim-tmux-navigator" "https://github.com/christoomey/vim-tmux-navigator"
+  install_tmux_plugin "tmux-resurrect" "https://github.com/tmux-plugins/tmux-resurrect"
+  install_tmux_plugin "tmux-continuum" "https://github.com/tmux-plugins/tmux-continuum"
 }
 
 reload_services() {
@@ -73,7 +82,7 @@ install_configs() {
   copy_file "$TMUX_SOURCE" "$TMUX_TARGET"
   copy_file "$AEROSPACE_SOURCE" "$AEROSPACE_TARGET"
   copy_file "$GHOSTTY_SOURCE" "$GHOSTTY_TARGET"
-  install_tmux_navigator
+  install_tmux_plugins
   reload_services
   log "Install completed."
 }
@@ -83,7 +92,7 @@ update_configs() {
   copy_file "$TMUX_SOURCE" "$TMUX_TARGET"
   copy_file "$AEROSPACE_SOURCE" "$AEROSPACE_TARGET"
   copy_file "$GHOSTTY_SOURCE" "$GHOSTTY_TARGET"
-  install_tmux_navigator
+  install_tmux_plugins
   reload_services
   log "Update completed."
 }

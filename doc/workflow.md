@@ -31,6 +31,15 @@ Attach to a session:
 tmux attach -t project-name
 ```
 
+After a reboot or crash, start tmux normally:
+
+```sh
+tmux
+```
+
+The latest saved workspace is restored automatically. tmux-continuum saves
+every 15 minutes. Use `C-a Ctrl-s` before a planned restart to save immediately.
+
 ## Common Flow
 
 | Need | Key or command |
@@ -48,6 +57,7 @@ tmux attach -t project-name
 | Git blame line | `<leader>gb` |
 | Preview Git hunk | `<leader>gp` |
 | Save | `Ctrl-s` |
+| Save tmux workspace | `C-a Ctrl-s` |
 
 ## Clean Up
 
