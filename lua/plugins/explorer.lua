@@ -58,9 +58,7 @@ return {
                 if not choice then return end
 
                 local value = choice.value
-                if choice.label == 'Relative path' and vim.startswith(path, cwd .. '/') then
-                  value = path:sub(#cwd + 2)
-                end
+                if choice.label == 'Relative path' and vim.startswith(path, cwd .. '/') then value = path:sub(#cwd + 2) end
                 vim.fn.setreg('+', value)
                 vim.notify('Copied: ' .. value)
               end)
@@ -74,7 +72,7 @@ return {
           border = 'double',
           size = {
             height = '80%',
-            width = '45%',
+            width = '70%',
           },
         },
       },
