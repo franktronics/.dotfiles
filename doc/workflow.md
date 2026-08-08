@@ -47,6 +47,7 @@ every 15 minutes. Use `C-a Ctrl-s` before a planned restart to save immediately.
 | Find a file | `<leader>sf` |
 | Search text | `<leader>sg` |
 | Open file explorer | `<leader>e` |
+| Inspect a file temporarily | `I` in Neo-tree |
 | New vertical split | `<leader>wv` |
 | New horizontal split | `<leader>wh` |
 | Move around splits/panes | `Ctrl-h/j/k/l` |

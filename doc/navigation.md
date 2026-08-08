@@ -28,6 +28,7 @@ This setup has one navigation rule: use `cmd-*` outside the terminal and `Ctrl-h
 | `Shift-Tab` | Previous Neovim buffer |
 | `<leader><leader>` | Search open buffers |
 | `<leader>e` | Toggle file explorer |
+| `I` in Neo-tree | Open a file for inspection without keeping it as a buffer |
 | `<leader>tt` | Toggle floating terminal |
 
 ## Recommended Workflow

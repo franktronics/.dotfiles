@@ -1,3 +1,15 @@
+local function open_for_inspection(state)
+  local node = state.tree:get_node()
+  if not node or node.type ~= 'file' then return end
+
+  local path = node.path or node:get_id()
+  require('neo-tree.utils').open_file(state, path, node.extra and node.extra.bufnr)
+
+  local buffer = vim.api.nvim_get_current_buf()
+  vim.bo[buffer].buflisted = false
+  vim.bo[buffer].bufhidden = 'wipe'
+end
+
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
@@ -42,6 +54,7 @@ return {
         window = {
           mappings = {
             ['\\'] = 'close_window',
+            ['I'] = open_for_inspection,
             ['Y'] = function(state)
               local node = state.tree:get_node()
               local path = node:get_id()

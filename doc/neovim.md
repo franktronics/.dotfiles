@@ -86,6 +86,7 @@ Inside Neo-tree:
 | Key | Action |
 | --- | --- |
 | `Enter` | Open file |
+| `I` | Open file for inspection; remove it when it is no longer visible |
 | `s` | Open in horizontal split |
 | `S` | Open in vertical split |
 | `y` | Copy (yank) file or directory to clipboard |
