@@ -37,7 +37,7 @@ tmux-continuum, then restored automatically after the tmux server starts.
 Clone this repository to the Neovim config directory:
 
 ```sh
-git clone <repo-url> ~/.config/nvim
+git clone https://github.com/franktronics/.dotfiles ~/.config/nvim
 ```
 
 Install all managed configs:

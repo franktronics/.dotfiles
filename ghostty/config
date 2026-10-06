@@ -17,3 +17,4 @@ bold-is-bright = false
 mouse-scroll-multiplier = 1
 
 shell-integration-features = ssh-terminfo,ssh-env
+macos-option-as-alt = false
